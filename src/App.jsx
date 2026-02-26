@@ -9,9 +9,11 @@ import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 
-const App = () => {
+const HomePage = () => {
   const [playState, setPlayState] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -30,6 +32,15 @@ const App = () => {
       </div>
       <VideoPlayer playState={playState} setPlayState={setPlayState} />
     </>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 

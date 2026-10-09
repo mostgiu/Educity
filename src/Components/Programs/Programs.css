@@ -1,63 +1,66 @@
 .programs {
-  margin: 80px auto;
+  margin: 60px auto 80px;
   width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
+
+.program {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(2, 126, 111, 0.12);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.04);
+}
+
 .programs img {
   width: 100%;
-  border-radius: 10px;
   display: block;
+  border-radius: 22px;
 }
-.program {
-  flex-basis: 31%;
-  position: relative;
-}
+
 .caption {
-  border-radius: 10px;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 15, 152, 0.3);
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(180deg, rgba(2, 126, 111, 0.2), rgba(15, 23, 42, 0.78));
   color: #fff;
   cursor: pointer;
   opacity: 0;
-  transition: 0.4s;
-  padding-top: 70%;
+  transition: 0.35s ease;
+  padding: 24px;
+  border-radius: 22px;
 }
+
 .caption img {
-  width: 60px;
-  margin-bottom: 10px;
+  width: 58px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18));
 }
+
+.caption p {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
 .program:hover .caption {
   opacity: 1;
-  padding-top: 0;
 }
 
 @media (max-width: 650px) {
   .programs {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    width: 100%;
   }
-  .program{
-    flex-basis: 100%;
-    margin: 20px;
+
+  .program {
+    margin: 0 8px;
   }
 }
 
-
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
-}

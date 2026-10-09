@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Testimonials.css";
 import next_icon from "../../assets/next-icon.png";
 import back_icon from "../../assets/back-icon.png";
@@ -6,21 +6,29 @@ import user_1 from "../../assets/user-1.png";
 import user_2 from "../../assets/user-3.png";
 import user_3 from "../../assets/user-3.png";
 import user_4 from "../../assets/user-4.png";
-function Testimonials() {
-  const slider = useRef();
-  let tx = 0;
-  const slideForward = () => {
-    if (tx > -50) {
-      tx -= 25;
-    }
-    slider.current.style.transform=`translateX(${tx}%)`
-  };
-  const slideBackward = () => {
-    if (tx < 0) {
-      tx += 25;
-    }
-        slider.current.style.transform=`translateX(${tx}%)`
 
+function Testimonials() {
+  const slider = useRef(null);
+  const [offset, setOffset] = useState(0);
+
+  const slideForward = () => {
+    setOffset((current) => {
+      const next = current > -50 ? current - 25 : current;
+      if (slider.current) {
+        slider.current.style.transform = `translateX(${next}%)`;
+      }
+      return next;
+    });
+  };
+
+  const slideBackward = () => {
+    setOffset((current) => {
+      const next = current < 0 ? current + 25 : current;
+      if (slider.current) {
+        slider.current.style.transform = `translateX(${next}%)`;
+      }
+      return next;
+    });
   };
 
   return (
@@ -33,7 +41,7 @@ function Testimonials() {
         onClick={slideBackward}
       />
       <div className="slider">
-        <ul ref={slider}>
+        <ul ref={slider} style={{ transform: `translateX(${offset}%)` }}>
           <li>
             <div className="slide">
               <div className="user-info">

@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import process from 'node:process';
 
-// https://vite.dev/config/
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1]
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true'
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 export default defineConfig({
   base: isGithubActions && repoName ? `/${repoName}/` : '/',
   plugins: [react()],
-})
+});

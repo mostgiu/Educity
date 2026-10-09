@@ -14,21 +14,21 @@ function Programs() {
 
         <div className="caption">
           <img src={program_icon_1} alt="" />
-          <p>Graduation Degree</p>
+          <p>Undergraduate</p>
         </div>
       </div>
       <div className="program">
         <img src={program_2} alt="" />
         <div className="caption">
           <img src={program_icon_2} alt="" />
-          <p>Graduation Degree</p>
+          <p>Postgraduate</p>
         </div>
       </div>
       <div className="program">
         <img src={program_3} alt="" />
         <div className="caption">
           <img src={program_icon_3} alt="" />
-          <p>Graduation Degree</p>
+          <p>Certificates</p>
         </div>
       </div>
     </div>

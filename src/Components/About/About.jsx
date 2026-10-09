@@ -21,21 +21,20 @@ const About = ({ setPlayState }) => {
         <h2>NURTURING Tommorow's Leader Today</h2>
 
         <p>
-          ¢Embark on a transformative educational journey with our university's
-          comprehensive education programs. Our cutting-edge curriculum is
-          designed to empower students with the knowledge, skills, and
-          experiences needed to excel in the dynamic field of education.
+          Embark on a transformative educational journey with our university's
+          comprehensive programs. Our curriculum is designed to empower students
+          with the knowledge, skills, and experiences needed to thrive in a
+          rapidly evolving world.
         </p>
         <p>
           With a focus on innovation, hands-on learning, and personalized
-          mentorship, our programs prepare aspiring educators to make meaningful
-          impact in classrooms, schools, and communities.
+          mentorship, our programs help aspiring educators and leaders make a
+          meaningful impact in classrooms, schools, and communities.
         </p>
         <p>
-          Whether you aspire to become a teacher, administrator, counselor, or
-          educational leader, our diverse range of programs offers the perfect
-          pathway to achieve your goals and unlock your full potential in
-          shaping the future of education.
+          Whether you want to teach, lead, support, or innovate, our diverse
+          pathways give you the foundation to grow with purpose and shape the
+          future of education.
         </p>
       </div>
     </div>
